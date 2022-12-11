@@ -36,7 +36,6 @@ namespace Rieltor_AIS
             this.Personnel_bt = new System.Windows.Forms.Button();
             this.Main_bt = new System.Windows.Forms.Button();
             this.exitBt = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // deals_Bt
@@ -100,17 +99,6 @@ namespace Rieltor_AIS
             this.exitBt.UseVisualStyleBackColor = true;
             this.exitBt.Click += new System.EventHandler(this.exitBt_Click);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(151, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(519, 222);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Добро пожаловать в систему!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // NavigationTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,7 +106,6 @@ namespace Rieltor_AIS
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.exitBt);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.deals_Bt);
             this.Controls.Add(this.Realty_bt);
             this.Controls.Add(this.Personnel_bt);
@@ -127,8 +114,6 @@ namespace Rieltor_AIS
             this.Name = "NavigationTemplate";
             this.ResumeLayout(false);
         }
-
-        public System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.Button exitBt;
 

@@ -10,7 +10,6 @@ namespace Rieltor_AIS
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(250, 250);
-            
         }
     }
 }

@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.exitBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -114,11 +115,25 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Система \"Недвижимость\"";
             // 
+            // exitBt
+            // 
+            this.exitBt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitBt.Location = new System.Drawing.Point(628, 486);
+            this.exitBt.Name = "exitBt";
+            this.exitBt.Size = new System.Drawing.Size(144, 63);
+            this.exitBt.TabIndex = 16;
+            this.exitBt.Tag = "штш";
+            this.exitBt.Text = "Выход";
+            this.exitBt.UseVisualStyleBackColor = true;
+            this.exitBt.Click += new System.EventHandler(this.exitBt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.exitBt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -132,6 +147,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button exitBt;
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;

@@ -27,5 +27,10 @@ namespace Rieltor_AIS
             main.Show();
             this.Hide();
         }
+
+        private void exitBt_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

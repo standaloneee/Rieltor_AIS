@@ -21,18 +21,15 @@ namespace Rieltor_AIS
             var form = Application.OpenForms.OfType<NavigationTemplate>().FirstOrDefault();
             if (form != null)
             {
-                label1.Visible = true;
                 form.Activate();
                 form.Show();
             }
             else
             {
                 new NavigationTemplate().Show();
-                label1.Visible = true;
                 this.Hide();
-                label1.Visible = true;
                 this.Text = "Main";
-                
+
             }
 
             
@@ -52,7 +49,6 @@ namespace Rieltor_AIS
             {
                 new Personnel().Show();
                 this.Hide();
-                label1.Visible = false;
             }
         }
 

@@ -8,7 +8,6 @@ namespace Rieltor_AIS
         public Deals()
         {
             InitializeComponent();
-            label1.Visible = false;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(250, 250);
         }
