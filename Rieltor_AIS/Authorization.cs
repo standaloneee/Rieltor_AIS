@@ -15,6 +15,8 @@ namespace Rieltor_AIS
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(250, 250);
         }
 
         private void button1_Click(object sender, EventArgs e)

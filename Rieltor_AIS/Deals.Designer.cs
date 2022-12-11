@@ -2,7 +2,7 @@
 
 namespace Rieltor_AIS
 {
-    partial class Personnel
+    partial class Deals
     {
         /// <summary>
         /// Required designer variable.
@@ -33,14 +33,13 @@ namespace Rieltor_AIS
         {
             this.SuspendLayout();
             // 
-            // Personnel
+            // Deals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "Personnel";
-            this.Text = "Personnel";
+            this.Name = "Deals";
+            this.Text = "Deals";
             this.ResumeLayout(false);
         }
 

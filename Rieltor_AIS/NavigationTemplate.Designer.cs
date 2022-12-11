@@ -31,38 +31,43 @@ namespace Rieltor_AIS
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.deals_Bt = new System.Windows.Forms.Button();
+            this.Realty_bt = new System.Windows.Forms.Button();
             this.Personnel_bt = new System.Windows.Forms.Button();
             this.Main_bt = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.exitBt = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button4
+            // deals_Bt
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(603, 40);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(144, 63);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Сделки";
-            this.button4.UseVisualStyleBackColor = true;
+            this.deals_Bt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deals_Bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deals_Bt.Location = new System.Drawing.Point(595, 40);
+            this.deals_Bt.Name = "deals_Bt";
+            this.deals_Bt.Size = new System.Drawing.Size(144, 63);
+            this.deals_Bt.TabIndex = 7;
+            this.deals_Bt.Text = "Сделки";
+            this.deals_Bt.UseVisualStyleBackColor = true;
+            this.deals_Bt.Click += new System.EventHandler(this.deals_Bt_Click);
             // 
-            // button3
+            // Realty_bt
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(403, 40);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 63);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Недвижимость";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Realty_bt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Realty_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Realty_bt.Location = new System.Drawing.Point(395, 40);
+            this.Realty_bt.Name = "Realty_bt";
+            this.Realty_bt.Size = new System.Drawing.Size(178, 63);
+            this.Realty_bt.TabIndex = 6;
+            this.Realty_bt.Text = "Недвижимость";
+            this.Realty_bt.UseVisualStyleBackColor = true;
+            this.Realty_bt.Click += new System.EventHandler(this.realtyBt_Click);
             // 
             // Personnel_bt
             // 
+            this.Personnel_bt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Personnel_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Personnel_bt.Location = new System.Drawing.Point(231, 40);
+            this.Personnel_bt.Location = new System.Drawing.Point(223, 40);
             this.Personnel_bt.Name = "Personnel_bt";
             this.Personnel_bt.Size = new System.Drawing.Size(144, 63);
             this.Personnel_bt.TabIndex = 5;
@@ -72,8 +77,9 @@ namespace Rieltor_AIS
             // 
             // Main_bt
             // 
+            this.Main_bt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Main_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Main_bt.Location = new System.Drawing.Point(53, 40);
+            this.Main_bt.Location = new System.Drawing.Point(45, 40);
             this.Main_bt.Name = "Main_bt";
             this.Main_bt.Size = new System.Drawing.Size(144, 63);
             this.Main_bt.TabIndex = 4;
@@ -81,20 +87,11 @@ namespace Rieltor_AIS
             this.Main_bt.UseVisualStyleBackColor = true;
             this.Main_bt.Click += new System.EventHandler(this.mainBt_Click);
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(151, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(535, 111);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Добро пожаловать в систему!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // exitBt
             // 
+            this.exitBt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitBt.Location = new System.Drawing.Point(644, 375);
+            this.exitBt.Location = new System.Drawing.Point(628, 486);
             this.exitBt.Name = "exitBt";
             this.exitBt.Size = new System.Drawing.Size(144, 63);
             this.exitBt.TabIndex = 9;
@@ -103,28 +100,40 @@ namespace Rieltor_AIS
             this.exitBt.UseVisualStyleBackColor = true;
             this.exitBt.Click += new System.EventHandler(this.exitBt_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(151, 204);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(519, 222);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Добро пожаловать в систему!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // NavigationTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.exitBt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.deals_Bt);
+            this.Controls.Add(this.Realty_bt);
             this.Controls.Add(this.Personnel_bt);
             this.Controls.Add(this.Main_bt);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "NavigationTemplate";
-            this.Text = "NavigationTemplate";
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button exitBt;
-
         public System.Windows.Forms.Label label1;
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button exitBt;
+
+        private System.Windows.Forms.Button deals_Bt;
+        private System.Windows.Forms.Button Realty_bt;
         private System.Windows.Forms.Button Personnel_bt;
         private System.Windows.Forms.Button Main_bt;
 
