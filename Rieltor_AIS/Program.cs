@@ -41,7 +41,7 @@ namespace Rieltor_AIS
             // NpgsqlCommand command7 = new NpgsqlCommand("INSERT INTO realty (location, r_type, owner_count, status) VALUES ('Москва', 'Квартира', 1, 'Продается')", conn);
             // NpgsqlCommand command8 = new NpgsqlCommand("INSERT INTO deals (date, price) VALUES ('01.01.2019', 1000000)", conn);
             // NpgsqlCommand command9 = new NpgsqlCommand("INSERT INTO personnel (login, password, account_type) VALUES ('admin', 'admin', 'Администратор')", conn);
-            // NpgsqlCommand command10 = new NpgsqlCommand("INSERT INTO accounts (login, password, account_type, personnel_id) VALUES ('admin', 'admin', 'Администратор', 1)", conn);
+            // NpgsqlCommand command10 = new NpgsqlCommand("INSERT INTO accounts (login, password, account_type, personnel_id) VALUES ('a', 'a', 'Администратор', 1)", conn);
             // command6.ExecuteNonQuery();
             // command7.ExecuteNonQuery();
             // command8.ExecuteNonQuery();

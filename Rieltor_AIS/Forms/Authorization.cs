@@ -25,11 +25,15 @@ namespace Rieltor_AIS
         {
             // open main form
             // close this form after opening main form
-            // seartch for user in database and if password is correct open main form
+            // search for user in database and if password is correct open main form
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
             conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM accounts WHERE login = '" + login.Text + "' AND password = '" + password.Text + "'", conn);
             NpgsqlDataReader dr = cmd.ExecuteReader();
+            // check if enter was pressed 
+            
+            
+            
             if (dr.Read())
             {
                 Main main = new Main();
@@ -47,6 +51,17 @@ namespace Rieltor_AIS
         private void exitBt_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+                // these last two lines will stop the beep sound
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
         }
     }
 }

@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace Rieltor_AIS
 {
     public partial class NavigationTemplate : Form
     {
+        public NpgsqlDataAdapter adapter;
+        public DataSet ds = new DataSet();
         
         public NavigationTemplate()
         {
@@ -88,6 +92,20 @@ namespace Rieltor_AIS
                 new Deals().Show();
                 this.Hide();
             }
+        }
+
+        private void save_Bt_Click(object sender, EventArgs e)
+        {
+            // save all
+            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
+            conn.Open();
+            adapter.InsertCommand = new NpgsqlCommandBuilder(adapter).GetInsertCommand();
+            adapter.UpdateCommand = new NpgsqlCommandBuilder(adapter).GetUpdateCommand();
+            adapter.Update(ds);
+            conn.Close();
+
+
+
         }
     }
 }

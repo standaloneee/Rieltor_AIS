@@ -14,9 +14,8 @@ namespace Rieltor_AIS
             this.Location = new Point(250, 250);
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
             conn.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT * FROM \"realty\"", conn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
+            adapter = new NpgsqlDataAdapter("SELECT * FROM \"realty\"", conn);
+            adapter.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
             conn.Close();
         }

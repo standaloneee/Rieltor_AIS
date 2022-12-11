@@ -68,6 +68,7 @@
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(126, 20);
             this.password.TabIndex = 13;
+            this.password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // login
             // 
@@ -75,6 +76,7 @@
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(126, 20);
             this.login.TabIndex = 12;
+            this.login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // label4
             // 
@@ -144,7 +146,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Authorization";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

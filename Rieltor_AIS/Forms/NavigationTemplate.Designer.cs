@@ -36,6 +36,7 @@ namespace Rieltor_AIS
             this.Personnel_bt = new System.Windows.Forms.Button();
             this.Main_bt = new System.Windows.Forms.Button();
             this.exitBt = new System.Windows.Forms.Button();
+            this.save_Bt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // deals_Bt
@@ -99,12 +100,26 @@ namespace Rieltor_AIS
             this.exitBt.UseVisualStyleBackColor = true;
             this.exitBt.Click += new System.EventHandler(this.exitBt_Click);
             // 
+            // save_Bt
+            // 
+            this.save_Bt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.save_Bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_Bt.Location = new System.Drawing.Point(316, 486);
+            this.save_Bt.Name = "save_Bt";
+            this.save_Bt.Size = new System.Drawing.Size(144, 63);
+            this.save_Bt.TabIndex = 10;
+            this.save_Bt.Tag = "";
+            this.save_Bt.Text = "Сохранить";
+            this.save_Bt.UseVisualStyleBackColor = true;
+            this.save_Bt.Click += new System.EventHandler(this.save_Bt_Click);
+            // 
             // NavigationTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.save_Bt);
             this.Controls.Add(this.exitBt);
             this.Controls.Add(this.deals_Bt);
             this.Controls.Add(this.Realty_bt);
@@ -114,6 +129,8 @@ namespace Rieltor_AIS
             this.Name = "NavigationTemplate";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button save_Bt;
 
         private System.Windows.Forms.Button exitBt;
 

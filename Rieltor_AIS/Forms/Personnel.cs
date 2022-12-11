@@ -10,6 +10,7 @@ namespace Rieltor_AIS
 {
     public partial class Personnel : NavigationTemplate
     {
+        
         public Personnel()
         {
             InitializeComponent();
@@ -19,11 +20,11 @@ namespace Rieltor_AIS
             
             
 
-            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
+            NpgsqlConnection conn = new NpgsqlConnection
+                ("Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
             conn.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT * FROM \"users\"", conn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
+            adapter = new NpgsqlDataAdapter("SELECT * FROM \"users\"", conn);
+            adapter.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
             conn.Close();
             
