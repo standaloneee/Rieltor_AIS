@@ -21,14 +21,14 @@ namespace Rieltor_AIS
             
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
             conn.Open();
-            // create table users if not exists id name surname phone position
-            NpgsqlCommand command = new NpgsqlCommand("CREATE TABLE IF NOT EXISTS users (id serial PRIMARY KEY, name varchar(50), surname varchar(50), phone varchar(50), position varchar(50))", conn);
+            // create table users if not exists id name surname phone
+            NpgsqlCommand command = new NpgsqlCommand("CREATE TABLE IF NOT EXISTS users (id serial PRIMARY KEY, name varchar(50), surname varchar(50), phone varchar(50))", conn);
             
             // create table realty if not exists id location type owner_count status
             NpgsqlCommand command2 = new NpgsqlCommand("CREATE TABLE IF NOT EXISTS realty (id serial PRIMARY KEY, location varchar(50), r_type varchar(50), owner_count int, status varchar(50))", conn);
             
-            // create table deals if not exists id date price
-            NpgsqlCommand command3 = new NpgsqlCommand("CREATE TABLE IF NOT EXISTS deals (id serial PRIMARY KEY, date varchar(50), price int)", conn);
+            // create table deals if not exists id date price personnel_id user_id realty_id
+            NpgsqlCommand command3 = new NpgsqlCommand("CREATE TABLE IF NOT EXISTS deals (id serial PRIMARY KEY, date varchar(50), price int, personnel_id int, user_id int, realty_id int)", conn);
             
             // create table personnel if not exists id login password account_type
             NpgsqlCommand command4 = new NpgsqlCommand("CREATE TABLE IF NOT EXISTS personnel (id serial PRIMARY KEY, login varchar(50), password varchar(50), account_type varchar(50))", conn);
@@ -47,13 +47,24 @@ namespace Rieltor_AIS
             // command8.ExecuteNonQuery();
             // command9.ExecuteNonQuery();
             // command10.ExecuteNonQuery();
-            
-            
+
             command.ExecuteNonQuery();
             command2.ExecuteNonQuery();
             command3.ExecuteNonQuery();
             command4.ExecuteNonQuery();
             command5.ExecuteNonQuery();
+            
+            // NpgsqlCommand fk1 = new NpgsqlCommand("ALTER TABLE accounts ADD FOREIGN KEY (personnel_id) REFERENCES personnel(id)", conn);
+            // fk1.ExecuteNonQuery();
+            // NpgsqlCommand fk2 = new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (id) REFERENCES realty(id)", conn);
+            // fk2.ExecuteNonQuery();
+            // NpgsqlCommand fk3 = new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (personnel_id) REFERENCES personnel(id)", conn);
+            // fk3.ExecuteNonQuery();
+            // NpgsqlCommand fk4 = new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (user_id) REFERENCES users(id)", conn);
+            // fk4.ExecuteNonQuery();
+            
+            
+            
             
             conn.Close();
             
