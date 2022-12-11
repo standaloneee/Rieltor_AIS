@@ -32,7 +32,6 @@ namespace Rieltor_AIS
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,33 +44,19 @@ namespace Rieltor_AIS
             this.dataGridView1.Size = new System.Drawing.Size(592, 281);
             this.dataGridView1.TabIndex = 11;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(171, 503);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 22);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Deals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Deals";
             this.Text = "Deals";
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
-
-        private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.DataGridView dataGridView1;
 

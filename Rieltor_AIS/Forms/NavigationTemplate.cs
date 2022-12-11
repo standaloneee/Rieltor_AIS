@@ -102,9 +102,9 @@ namespace Rieltor_AIS
             adapter.InsertCommand = new NpgsqlCommandBuilder(adapter).GetInsertCommand();
             adapter.UpdateCommand = new NpgsqlCommandBuilder(adapter).GetUpdateCommand();
             adapter.Update(ds);
+            ds.Clear();
+            adapter.Fill(ds);
             conn.Close();
-
-
 
         }
     }

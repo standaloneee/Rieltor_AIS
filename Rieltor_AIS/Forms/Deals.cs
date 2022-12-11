@@ -19,11 +19,10 @@ namespace Rieltor_AIS
             adapter.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
             conn.Close();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            adapter.Update(ds);
-        }
     }
 }
