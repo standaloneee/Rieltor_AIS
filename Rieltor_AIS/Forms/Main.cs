@@ -8,8 +8,8 @@ namespace Rieltor_AIS
         public Main()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(250, 250);
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(250, 250);
         }
     }
 }

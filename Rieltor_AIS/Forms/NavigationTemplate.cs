@@ -10,18 +10,23 @@ namespace Rieltor_AIS
     public partial class NavigationTemplate : Form
     {
         public NpgsqlDataAdapter adapter;
+
+        public NpgsqlConnection conn =
+            new NpgsqlConnection(
+                "Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
+
         public DataSet ds = new DataSet();
-        
+
         public NavigationTemplate()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(250, 250);
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(250, 250);
         }
 
         private void mainBt_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             var form = Application.OpenForms.OfType<NavigationTemplate>().FirstOrDefault();
             if (form != null)
             {
@@ -31,17 +36,14 @@ namespace Rieltor_AIS
             else
             {
                 new NavigationTemplate().Show();
-                this.Hide();
-                this.Text = "Main";
-
+                Hide();
+                Text = "Main";
             }
-
-            
         }
 
         private void personnelBt_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             var form = Application.OpenForms.OfType<Personnel>().FirstOrDefault();
             if (form != null)
             {
@@ -52,7 +54,7 @@ namespace Rieltor_AIS
             else
             {
                 new Personnel().Show();
-                this.Hide();
+                Hide();
             }
         }
 
@@ -63,7 +65,7 @@ namespace Rieltor_AIS
 
         private void realtyBt_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             var form = Application.OpenForms.OfType<Realty>().FirstOrDefault();
             if (form != null)
             {
@@ -73,14 +75,13 @@ namespace Rieltor_AIS
             else
             {
                 new Realty().Show();
-                this.Hide();
+                Hide();
             }
-            
         }
 
         private void deals_Bt_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             var form = Application.OpenForms.OfType<Deals>().FirstOrDefault();
             if (form != null)
             {
@@ -90,14 +91,12 @@ namespace Rieltor_AIS
             else
             {
                 new Deals().Show();
-                this.Hide();
+                Hide();
             }
         }
 
         private void save_Bt_Click(object sender, EventArgs e)
         {
-            // save all
-            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
             conn.Open();
             adapter.InsertCommand = new NpgsqlCommandBuilder(adapter).GetInsertCommand();
             adapter.UpdateCommand = new NpgsqlCommandBuilder(adapter).GetUpdateCommand();
@@ -105,7 +104,6 @@ namespace Rieltor_AIS
             ds.Clear();
             adapter.Fill(ds);
             conn.Close();
-
         }
     }
 }
