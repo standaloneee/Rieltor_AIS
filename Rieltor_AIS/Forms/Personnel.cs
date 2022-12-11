@@ -1,7 +1,9 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using Npgsql;
+
 
 
 namespace Rieltor_AIS
@@ -26,5 +28,6 @@ namespace Rieltor_AIS
             conn.Close();
             
         }
+
     }
 }
