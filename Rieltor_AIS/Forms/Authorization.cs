@@ -86,7 +86,7 @@ namespace Rieltor_AIS
             // create table personnel if not exists id login password account_type
             NpgsqlCommand command4 =
                 new NpgsqlCommand(
-                    "CREATE TABLE IF NOT EXISTS personnel (id serial PRIMARY KEY, login varchar(50), password varchar(50), account_type varchar(50))",
+                    "CREATE TABLE IF NOT EXISTS personnel (id serial PRIMARY KEY, name varchar(50), surname varchar(50),phone varchar(15), account_type varchar(50))",
                     conn);
 
             // create table accounts if not exists id login password account_type personnel_id
@@ -102,8 +102,8 @@ namespace Rieltor_AIS
                     conn);
 
             NpgsqlCommand command7 =
-                new NpgsqlCommand(
-                    "INSERT INTO personnel (login, password, account_type) VALUES ('admin', 'admin', 'admin')", conn);
+                new NpgsqlCommand("INSERT INTO personnel (name, surname, phone, account_type) VALUES ('Иван', 'Иванов', '8-800-555-35-35', 'Администратор')",
+                    conn);
 
             NpgsqlCommand command8 =
                 new NpgsqlCommand(
