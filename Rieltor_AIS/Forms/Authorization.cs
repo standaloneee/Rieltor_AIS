@@ -60,7 +60,6 @@ namespace Rieltor_AIS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
             NpgsqlConnection conn =
                 new NpgsqlConnection(
                     "Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
@@ -102,7 +101,8 @@ namespace Rieltor_AIS
                     conn);
 
             NpgsqlCommand command7 =
-                new NpgsqlCommand("INSERT INTO personnel (name, surname, phone, account_type) VALUES ('Иван', 'Иванов', '8-800-555-35-35', 'Администратор')",
+                new NpgsqlCommand(
+                    "INSERT INTO personnel (name, surname, phone, account_type) VALUES ('Иван', 'Иванов', '8-800-555-35-35', 'Администратор')",
                     conn);
 
             NpgsqlCommand command8 =
@@ -114,6 +114,8 @@ namespace Rieltor_AIS
                 new NpgsqlCommand(
                     "INSERT INTO realty (location, r_type, owner_count, status) VALUES ('Москва', 'Квартира', 1, 'Продается')",
                     conn);
+
+
             NpgsqlCommand command10 =
                 new NpgsqlCommand(
                     "INSERT INTO deals (date, price, personnel_id, user_id, realty_id) VALUES ('01.01.2020', 1000000, 1, 1, 1)",
@@ -123,19 +125,22 @@ namespace Rieltor_AIS
             command3.ExecuteNonQuery();
             command4.ExecuteNonQuery();
             command5.ExecuteNonQuery();
-            
-            
+
+
             command6.ExecuteNonQuery();
             command7.ExecuteNonQuery();
             command8.ExecuteNonQuery();
             command9.ExecuteNonQuery();
             command10.ExecuteNonQuery();
 
-            
-            NpgsqlCommand fk1 = new NpgsqlCommand("ALTER TABLE accounts ADD FOREIGN KEY (personnel_id) REFERENCES personnel(id)", conn);
-            NpgsqlCommand fk2 = new NpgsqlCommand("ALTER TABLE realty ADD FOREIGN KEY (id) REFERENCES deals(id)", conn);
-            NpgsqlCommand fk3 = new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (personnel_id) REFERENCES personnel(id)", conn);
-            NpgsqlCommand fk4 = new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (user_id) REFERENCES users(id)", conn);
+
+            NpgsqlCommand fk1 =
+                new NpgsqlCommand("ALTER TABLE accounts ADD FOREIGN KEY (personnel_id) REFERENCES personnel(id)", conn);
+            NpgsqlCommand fk2 = new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (id) REFERENCES realty(id)", conn);
+            NpgsqlCommand fk3 =
+                new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (personnel_id) REFERENCES personnel(id)", conn);
+            NpgsqlCommand fk4 =
+                new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (user_id) REFERENCES users(id)", conn);
 
             fk1.ExecuteNonQuery();
             fk2.ExecuteNonQuery();
