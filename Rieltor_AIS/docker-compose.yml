@@ -1,0 +1,15 @@
+﻿services:
+  db:
+    image: postgres:14.5
+    container_name: ais
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    command: postgres -p 5432
+    networks:
+      - production_network
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
