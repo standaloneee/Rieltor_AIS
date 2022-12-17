@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.exitBt = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.register_Bt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // warning
@@ -142,11 +143,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // register_Bt
+            // 
+            this.register_Bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.register_Bt.Location = new System.Drawing.Point(287, 354);
+            this.register_Bt.Name = "register_Bt";
+            this.register_Bt.Size = new System.Drawing.Size(261, 39);
+            this.register_Bt.TabIndex = 18;
+            this.register_Bt.Text = "Зарегестрироваться";
+            this.register_Bt.UseVisualStyleBackColor = true;
+            this.register_Bt.Click += new System.EventHandler(this.register_Bt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.register_Bt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.exitBt);
             this.Controls.Add(this.warning);
@@ -163,6 +176,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button register_Bt;
 
         private System.Windows.Forms.Button button2;
 

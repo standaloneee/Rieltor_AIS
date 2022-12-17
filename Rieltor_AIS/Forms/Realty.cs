@@ -36,6 +36,7 @@ namespace Rieltor_AIS
             comboBox1.DataSource = dt;
             comboBox1.DisplayMember = "r_type";
             comboBox1.ValueMember = "r_type";
+            conn.Close();
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)

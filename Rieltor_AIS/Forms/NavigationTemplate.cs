@@ -26,6 +26,7 @@ namespace Rieltor_AIS
 
         private void mainBt_Click(object sender, EventArgs e)
         {
+            
             Hide();
             var form = Application.OpenForms.OfType<NavigationTemplate>().FirstOrDefault();
             if (form != null)

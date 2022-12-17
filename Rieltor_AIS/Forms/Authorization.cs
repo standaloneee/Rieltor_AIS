@@ -19,22 +19,28 @@ namespace Rieltor_AIS
         {
             // open main form
             // close this form after opening main form
-            // search for user in database and if password is correct open main form
             var conn = new NpgsqlConnection(
                 "Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
             conn.Open();
+            // search for user in database and if password is correct and user is not customer open main form
             var cmd = new NpgsqlCommand(
                 "SELECT * FROM accounts WHERE login = '" + login.Text + "' AND password = '" + password.Text + "'",
                 conn);
             var dr = cmd.ExecuteReader();
-            // check if enter was pressed 
-
-
             if (dr.Read())
             {
-                var main = new Main();
-                main.Show();
-                Hide();
+                if (dr["account_type"].ToString() != "customer")
+                {
+                    var mainForm = new Main();
+                    mainForm.Show();
+                    Hide();
+                }
+                else
+                {
+                    var userForm = new UserForm();
+                    userForm.Show();
+                    Hide();
+                }
             }
             else
             {
@@ -91,7 +97,7 @@ namespace Rieltor_AIS
             // create table accounts if not exists id login password account_type personnel_id
             NpgsqlCommand command5 =
                 new NpgsqlCommand(
-                    "CREATE TABLE IF NOT EXISTS accounts (id serial PRIMARY KEY, login varchar(50), password varchar(50), account_type varchar(50), personnel_id int)",
+                    "CREATE TABLE IF NOT EXISTS accounts (id serial PRIMARY KEY, login varchar(50), password varchar(50), account_type varchar(50), personnel_id int, user_id int)",
                     conn);
 
             // insert one row into each table
@@ -141,6 +147,8 @@ namespace Rieltor_AIS
                 new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (personnel_id) REFERENCES personnel(id)", conn);
             NpgsqlCommand fk4 =
                 new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (user_id) REFERENCES users(id)", conn);
+            NpgsqlCommand fk5 =
+                new NpgsqlCommand("ALTER TABLE accounts ADD FOREIGN KEY (user_id) REFERENCES users(id)", conn);
 
             fk1.ExecuteNonQuery();
             fk2.ExecuteNonQuery();
@@ -150,6 +158,13 @@ namespace Rieltor_AIS
 
             conn.Close();
             MessageBox.Show("Test");
+        }
+
+        private void register_Bt_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            Hide();
         }
     }
 }
