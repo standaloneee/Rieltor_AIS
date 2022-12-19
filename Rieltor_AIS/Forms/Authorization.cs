@@ -34,18 +34,33 @@ namespace Rieltor_AIS
                     var mainForm = new Main();
                     mainForm.Show();
                     Hide();
+                    dr.Close();
                 }
                 else
                 {
-                    var userForm = new UserForm();
-                    userForm.Show();
-                    Hide();
+                    // take user id with login = login.Text
+                    conn.Close();
+                    conn.Open();
+                    var cmd2 = new NpgsqlCommand(
+                        "SELECT id FROM accounts WHERE login = '" + login.Text + "'",
+                        conn);
+
+                    var dr2 = cmd2.ExecuteReader();
+                    if (dr2.Read())
+                    {
+                        var userForm = new UserForm((dr2["id"].ToString()));
+                        userForm.Show();
+                        Hide();
+                        dr2.Close();
+                        conn.Close();
+                    }
                 }
             }
             else
             {
                 warning.Visible = true;
             }
+            conn.Close();
         }
 
         private void exitBt_Click(object sender, EventArgs e)
@@ -79,7 +94,7 @@ namespace Rieltor_AIS
             // create table realty if not exists id location type owner_count status
             NpgsqlCommand command2 =
                 new NpgsqlCommand(
-                    "CREATE TABLE IF NOT EXISTS realty (id serial PRIMARY KEY, location varchar(50), r_type varchar(50), owner_count int, status varchar(50))",
+                    "CREATE TABLE IF NOT EXISTS realty (id serial PRIMARY KEY, location varchar(50), r_type varchar(50), owner_count int, status varchar(50), price int)",
                     conn);
 
             // create table deals if not exists id date price personnel_id user_id realty_id
@@ -118,7 +133,7 @@ namespace Rieltor_AIS
 
             NpgsqlCommand command9 =
                 new NpgsqlCommand(
-                    "INSERT INTO realty (location, r_type, owner_count, status) VALUES ('Москва', 'Квартира', 1, 'Продается')",
+                    "INSERT INTO realty (location, r_type, owner_count, status, price) VALUES ('Москва', 'Квартира', 1, 'Продается', 1000000)",
                     conn);
 
 
@@ -137,7 +152,7 @@ namespace Rieltor_AIS
             command7.ExecuteNonQuery();
             command8.ExecuteNonQuery();
             command9.ExecuteNonQuery();
-            command10.ExecuteNonQuery();
+            // command10.ExecuteNonQuery();
 
 
             NpgsqlCommand fk1 =
@@ -149,11 +164,13 @@ namespace Rieltor_AIS
                 new NpgsqlCommand("ALTER TABLE deals ADD FOREIGN KEY (user_id) REFERENCES users(id)", conn);
             NpgsqlCommand fk5 =
                 new NpgsqlCommand("ALTER TABLE accounts ADD FOREIGN KEY (user_id) REFERENCES users(id)", conn);
+            
 
             fk1.ExecuteNonQuery();
             fk2.ExecuteNonQuery();
             fk3.ExecuteNonQuery();
             fk4.ExecuteNonQuery();
+            fk5.ExecuteNonQuery();
 
 
             conn.Close();
