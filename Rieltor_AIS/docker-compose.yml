@@ -9,7 +9,3 @@
     ports:
       - 5432:5432
     command: postgres -p 5432
-    networks:
-      - production_network
-    volumes:
-      - ./database/data:/var/lib/postgresql/data
