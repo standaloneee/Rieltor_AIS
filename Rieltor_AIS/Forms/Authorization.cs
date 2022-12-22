@@ -13,7 +13,6 @@ namespace Rieltor_AIS
             password.PasswordChar = '*';
             StartPosition = FormStartPosition.Manual;
             Location = new Point(250, 250);
-            button2.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,6 +81,8 @@ namespace Rieltor_AIS
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.Visible = false;
+
             NpgsqlConnection conn =
                 new NpgsqlConnection(
                     "Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
