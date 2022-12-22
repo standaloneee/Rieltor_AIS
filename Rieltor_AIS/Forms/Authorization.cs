@@ -13,6 +13,7 @@ namespace Rieltor_AIS
             password.PasswordChar = '*';
             StartPosition = FormStartPosition.Manual;
             Location = new Point(250, 250);
+            button2.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
