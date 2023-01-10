@@ -74,9 +74,9 @@ namespace Rieltor_AIS
             // savetoExcel_Bt
             // 
             this.savetoExcel_Bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.savetoExcel_Bt.Location = new System.Drawing.Point(465, 484);
+            this.savetoExcel_Bt.Location = new System.Drawing.Point(465, 486);
             this.savetoExcel_Bt.Name = "savetoExcel_Bt";
-            this.savetoExcel_Bt.Size = new System.Drawing.Size(157, 67);
+            this.savetoExcel_Bt.Size = new System.Drawing.Size(157, 63);
             this.savetoExcel_Bt.TabIndex = 14;
             this.savetoExcel_Bt.Text = "Экспорт";
             this.savetoExcel_Bt.UseVisualStyleBackColor = true;
