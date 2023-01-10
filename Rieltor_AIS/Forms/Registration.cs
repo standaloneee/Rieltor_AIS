@@ -16,16 +16,12 @@ namespace Rieltor_AIS
 
         private void register_Bt_Click(object sender, EventArgs e)
         {
-            // take name surname phone login and password from textboxes and send them to database
-            // if login is already taken, color login textbox red and snap cursor to it
             
-            // if everything is ok, close this form and open main form
             
             NpgsqlConnection conn =
                 new NpgsqlConnection(
                     "Server=localhost;Port=5432;User Id=postgres;Password=postgres;Database=postgres;");
             conn.Open();
-            // check if login is already taken
             NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM accounts WHERE login = '" + login_TextBox.Text + "'", conn);
             NpgsqlDataReader reader = command.ExecuteReader();
 
@@ -80,21 +76,41 @@ namespace Rieltor_AIS
                 {
                     name_TextBox.BackColor = Color.Red;
                 }
+                else
+                {
+                    name_TextBox.BackColor = Color.White;
+                }
                 if (surname_TextBox.Text == "")
                 {
                     surname_TextBox.BackColor = Color.Red;
+                }
+                else
+                {
+                    surname_TextBox.BackColor = Color.White;
                 }
                 if (phone_TextBox.Text == "")
                 {
                     phone_TextBox.BackColor = Color.Red;
                 }
+                else
+                {
+                    phone_TextBox.BackColor = Color.White;
+                }
                 if (login_TextBox.Text == "")
                 {
                     login_TextBox.BackColor = Color.Red;
                 }
+                else
+                {
+                    login_TextBox.BackColor = Color.White;
+                }
                 if (password_TextBox.Text == "")
                 {
                     password_TextBox.BackColor = Color.Red;
+                }
+                else
+                {
+                    password_TextBox.BackColor = Color.White;
                 }
                 
                 return false;
@@ -119,5 +135,15 @@ namespace Rieltor_AIS
             Form authorization = new Form1();
             authorization.Show();
         }
+        
+        //check if all textboxes are valid after an input made
+        private void name_TextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (name_TextBox.Text != "")
+            {
+                name_TextBox.BackColor = Color.White;
+            }
+        }
+        
     }
 }
