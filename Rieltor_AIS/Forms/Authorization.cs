@@ -81,7 +81,7 @@ namespace Rieltor_AIS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button2.Visible = false;
+          testData_Bt.Visible = false;
 
             NpgsqlConnection conn =
                 new NpgsqlConnection(

@@ -29,9 +29,11 @@ namespace Rieltor_AIS
             
             Hide();
             var form = Application.OpenForms.OfType<NavigationTemplate>().FirstOrDefault();
+            
             if (form != null)
             {
                 form.Activate();
+                form.save_Bt.Visible = false;
                 form.Show();
             }
             else
@@ -39,6 +41,8 @@ namespace Rieltor_AIS
                 new NavigationTemplate().Show();
                 Hide();
                 Text = "Main";
+                save_Bt.Visible = false;
+
             }
         }
 
@@ -51,11 +55,13 @@ namespace Rieltor_AIS
                 form.Text = "Personnel";
                 form.Activate();
                 form.Show();
+                save_Bt.Visible = true;
             }
             else
             {
                 new Personnel().Show();
                 Hide();
+                save_Bt.Visible = true;
             }
         }
 
@@ -72,11 +78,13 @@ namespace Rieltor_AIS
             {
                 form.Activate();
                 form.Show();
+                save_Bt.Visible = true;
             }
             else
             {
                 new Realty().Show();
                 Hide();
+                save_Bt.Visible = true;
             }
         }
 
@@ -88,11 +96,13 @@ namespace Rieltor_AIS
             {
                 form.Activate();
                 form.Show();
+                save_Bt.Visible = true;
             }
             else
             {
                 new Deals().Show();
                 Hide();
+                save_Bt.Visible = true;
             }
         }
 

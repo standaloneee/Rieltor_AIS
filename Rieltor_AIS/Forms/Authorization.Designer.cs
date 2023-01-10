@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.exitBt = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.testData_Bt = new System.Windows.Forms.Button();
             this.register_Bt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -133,15 +133,16 @@
             this.exitBt.UseVisualStyleBackColor = true;
             this.exitBt.Click += new System.EventHandler(this.exitBt_Click);
             // 
-            // button2
+            // testData_Bt
             // 
-            this.button2.Location = new System.Drawing.Point(109, 501);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 35);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Заполнить БД тестовыми данными";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.testData_Bt.Location = new System.Drawing.Point(109, 501);
+            this.testData_Bt.Name = "testData_Bt";
+            this.testData_Bt.Size = new System.Drawing.Size(154, 35);
+            this.testData_Bt.TabIndex = 17;
+            this.testData_Bt.Text = "Заполнить БД тестовыми данными";
+            this.testData_Bt.UseVisualStyleBackColor = true;
+            this.testData_Bt.Visible = false;
+            this.testData_Bt.Click += new System.EventHandler(this.button2_Click);
             // 
             // register_Bt
             // 
@@ -160,7 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.register_Bt);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.testData_Bt);
             this.Controls.Add(this.exitBt);
             this.Controls.Add(this.warning);
             this.Controls.Add(this.button1);
@@ -179,7 +180,7 @@
 
         private System.Windows.Forms.Button register_Bt;
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button testData_Bt;
 
         private System.Windows.Forms.Button exitBt;
 
